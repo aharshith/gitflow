@@ -1,0 +1,24 @@
+#Use an linux image with gcc
+FROM gcc:latest
+
+#Create install directrory
+RUN mkdir /install
+
+#Create app directory and cd into it
+WORKDIR /app
+
+#Copy the contents from host's build context to docker image
+COPY . .
+
+#Run the build script - make
+RUN make
+
+#Create a user by name ubuntu
+RUN useradd ubuntu
+
+#This command will be executed during docker run
+#We are copying generated executable from apps folder to install folder
+#because we volume mount host directory on top of install directory
+#also, we change ownership of executable from root to ubuntu
+CMD cp -r /app/executable /install && chown -R ubuntu:ubuntu /install/
+

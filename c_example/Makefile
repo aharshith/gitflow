@@ -1,8 +1,8 @@
 
 
 CC=gcc
-CFLAGS=-Wall -Iinclude
-TARGET=executble
+CFLAGS=-Wall -Iinclude --static
+TARGET=executable
 
 SRCS=src/a.c src/b.c
 
