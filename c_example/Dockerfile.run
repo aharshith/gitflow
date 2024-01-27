@@ -1,5 +1,5 @@
 #Pull ubuntu 16.04LTS image from docker.io repo
-FROM ubuntu:16.04
+FROM ubuntu:22.04
 
 #Create app directory and cd into it
 WORKDIR /app
