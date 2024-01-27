@@ -5,7 +5,7 @@ FROM ubuntu:16.04
 WORKDIR /app
 
 #Copy the contents ONLY from host folder in the build context
-COPY ./host .
+COPY ./install .
 
 #This command will be run only during docker run
 #Execute the executable and print the result
